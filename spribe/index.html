@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spribe Aviator Predictor Signals</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .card {
+      background: rgba(0,0,0,0.75);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: #00ffcc;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    select, button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    button {
+      background: #00ffcc;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #00e6b8;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #111;
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 400px;
+      width: 90%;
+    }
+    .modal h2 {
+      color: #00ffcc;
+      margin-bottom: 20px;
+    }
+    .option-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border-radius: 10px;
+      background: #00ffcc;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .close-btn {
+      margin-top: 15px;
+      background: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Spribe Aviator Predictor Signals</h1>
+    <p>Welcome to the only verified platform for Aviator game predictions.  
+    Only the betting sites listed below are supported. If your site is not included, kindly create an account on one of the supported platforms.</p>
+    
+    <select id="siteSelect">
+      <option value="">-- Select Your Betting Site --</option>
+      <option>1win</option>
+      <option>1xbet</option>
+      <option>Bet365</option>
+      <option>Mozzart</option>
+      <option>Sportybet</option>
+      <option>Betwinner</option>
+      <option>Betika</option>
+      <option>Mulasport</option>
+      <option>Betway</option>
+      <option>Melbet</option>
+      <option>Odibets</option>
+      <option>Hollywoodbets</option>
+      <option>Sportpesa</option>
+    </select>
+    <button onclick="openModal()">Continue</button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="optionsModal">
+    <div class="modal-content">
+      <h2>Select an Option</h2>
+      <a id="whatsapp1" target="_blank" class="option-btn">1. Get Access to Aviator Prediction Platform</a>
+      <a id="whatsapp2" target="_blank" class="option-btn">2. Pay After Win Account Management</a>
+      <a id="telegram" target="_blank" class="option-btn">3. Get Free Predictions from Telegram Channel</a>
+      <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      const site = document.getElementById('siteSelect').value;
+      if(!site) { alert("Please select your betting site"); return; }
+
+      // Prefilled WhatsApp messages
+      const msg1 = `Hello, help me get access to the Aviator Prediction Platform for ${site}`;
+      const msg2 = `Hello, help me I want Pay After Win Account Management option for ${site}`;
+
+      document.getElementById("whatsapp1").href = `https://wa.me/254788020107?text=${encodeURIComponent(msg1)}`;
+      document.getElementById("whatsapp2").href = `https://wa.me/254788020107?text=${encodeURIComponent(msg2)}`;
+      document.getElementById("telegram").href = "https://t.me/aviatorpredictorbot_cnc";
+
+      document.getElementById("optionsModal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("optionsModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>

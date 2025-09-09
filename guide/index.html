@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AviSignals - Platform Selection</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.jpg?v=2025-08-31">
+    <link rel="shortcut icon" href="../favicon.jpg?v=2025-08-31" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../favicon.jpg?v=2025-08-31">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .header .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+        
+        .alert-banner {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+        }
+        .alert-banner .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .alert-banner h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .alert-banner p {
+            font-size: 16px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+        
+        .warning-note {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #FFC107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .warning-note .icon {
+            font-size: 36px;
+            color: #FFC107;
+            margin-bottom: 10px;
+        }
+        
+        .warning-note h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #F57C00;
+            margin-bottom: 10px;
+        }
+        
+        .warning-note p {
+            font-size: 15px;
+            color: #b6af8a;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        
+        .step-title {
+            text-align: center;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .step-title h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+
+        .step-title p {
+            font-size: 14px;
+            color: #b6ac8d;
+            font-weight: 500;
+        }
+
+        .step-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .step-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #bdaa91;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 15px 25px;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+            margin: 5px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+        }
+        
+        .download-btn.ios {
+            background: linear-gradient(45deg, #007AFF, #0056CC);
+            box-shadow: 0 5px 15px rgba(0, 122, 255, 0.3);
+        }
+        
+        .download-btn.ios:hover {
+            box-shadow: 0 8px 25px rgba(0, 122, 255, 0.4);
+        }
+        
+        .download-btn .icon {
+            font-size: 20px;
+        }
+        
+        .platform-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px 30px;
+            background: linear-gradient(45deg, #FF6B35, #F7931E);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+            margin: 20px auto;
+        }
+        
+        .platform-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+        }
+        
+        .platform-link .icon {
+            font-size: 22px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+        
+        .footer p {
+            margin-bottom: 5px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .step-content {
+                margin: 20px auto;
+                padding: 15px;
+            }
+            
+            .step-title {
+                margin: 20px auto;
+                padding: 15px;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .download-btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            .platform-link {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <i class="fas fa-plane"></i>
+        </div>
+        <h1>Spribe Aviator Predictor Signals Platform</h1>
+        <p class="subtitle">Secure Access Guide</p>
+    </div>
+
+    <div class="container">
+        <div class="alert-banner">
+            <i class="fas fa-shield-alt icon"></i>
+            <h2>Secure Platform Access</h2>
+            <p>Welcome to AviSignals, the verified platform for Aviator Game Predictions. Use the link below to get started.</p>
+        </div>
+        <a href="https://avisignals.com" class="platform-link" target="_blank" onclick="return confirmBrowser()">
+            <i class="fas fa-rocket icon"></i>
+            <span>Open AviSignals Platform</span>
+        </a>
+        <div class="warning-note">
+            <i class="fas fa-info-circle icon"></i>
+            <h4>Access Instructions</h4>
+            <p>Open platform in Microsoft Edge only</p>
+            <p><strong>Copy this URL and paste it directly into Microsoft Edge:</strong><br>
+                <span style="font-family: monospace; background: rgba(0,0,0,0.1); padding: 5px 10px; border-radius: 5px; font-weight: bold;">https://avisignals.com</span></p>
+        </div>
+        
+    </div>
+    <div class="step-content">
+        <div class="step-title">
+            <h3>Download Microsoft Edge Browser</h3>
+            <p>Required for secure platform access</p>
+        </div>
+        <div class="step-description">
+            Microsoft Edge provides the enhanced security features and compatibility required for our premium prediction platform. Download the browser through Play Store or App Store for your device below:
+        </div>  
+        <div class="download-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.microsoft.emmx" class="download-btn" target="_blank">
+                <i class="fab fa-google-play icon"></i>
+                <span>Download for Android</span>       
+            </a>
+            <a href="https://apps.apple.com/app/microsoft-edge/id1288723196" class="download-btn ios" target="_blank">
+                <i class="fab fa-app-store icon"></i>
+                <span>Download for iOS</span>
+            </a>
+            <a href="https://www.microsoft.com/edge/download" class="download-btn" target="_blank">
+                <i class="fas fa-desktop icon"></i>
+                <span>Download for Desktop</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 AviSignals. All rights reserved.</p>
+        <p class="support">Need help? Contact our support team for assistance.</p>
+    </div>
+
+    <script>
+        function confirmBrowser() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isEdge = userAgent.indexOf('edg') > -1;
+            
+            if (!isEdge) {
+                alert('⚠️ Security Notice\n\nFor better performance, please copy the URL and open it directly in Microsoft Edge browser:\n\nhttps://avisignals.com\n\nUsing other browsers may cause webhook fluctuations and compromise account security and platform functionality.');
+                return false;
+            }
+            return true;
+        }
+        
+        // Auto-detect Edge browser and show appropriate messaging
+        window.addEventListener('load', function() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isEdge = userAgent.indexOf('edg') > -1;
+            
+            if (!isEdge) {
+                const alertBanner = document.querySelector('.alert-banner');
+                alertBanner.innerHTML = `
+                    <i class="fas fa-exclamation-triangle icon"></i>
+                    <h2>Browser Not Compatible</h2>
+                    <p>You are currently using an unsupported browser. Please download Microsoft Edge to access our secure platform.</p>
+                `;
+                alertBanner.style.background = 'linear-gradient(45deg, #FF9800, #F57C00)';
+            }
+        });
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        
+        // Add error handling for Tawk.to
+        Tawk_API.onLoad = function(){
+            console.log('Tawk.to chat widget loaded successfully on guide site');
+        };
+        
+        // Handle offline scenarios
+        Tawk_API.onOfflineMessage = function(data){
+            console.log('Tawk.to offline message:', data);
+        };
+        
+        // Custom visitor info for guide site
+        Tawk_API.onLoad = function(){
+            Tawk_API.setAttributes({
+                'page': 'Guide Site',
+                'section': 'Platform Selection',
+                'timestamp': new Date().toISOString()
+            });
+        };
+        
+        (function(){
+            try {
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/68a240334ebc491927e09906/1j2ssljfv';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                
+                // Error handling for script loading
+                s1.onerror = function() {
+                    console.warn('Tawk.to chat widget failed to load on guide site. Please check your internet connection.');
+                };
+                
+                s0.parentNode.insertBefore(s1,s0);
+            } catch (error) {
+                console.warn('Error loading Tawk.to widget on guide site:', error);
+            }
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>

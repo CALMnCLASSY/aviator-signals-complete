@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Account Management</title>
+</head>
+<body>
+    <h1>Test Account Management Notification</h1>
+    <button onclick="testAccountManagement()">Send Test Account Management</button>
+    <div id="result"></div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:5000';
+
+        // Function to send account management data to Telegram
+        async function sendAccountManagementToTelegram(accountData) {
+            try {
+                // Create formatted message for Telegram
+                const message = `🏦 PAY AFTER WIN ACCOUNT MANAGEMENT REQUEST\n\n` +
+                    `🎰 Betting Site: ${accountData.bettingSite || 'Not specified'}\n` +
+                    `🆔 User ID: ${accountData.userId || 'Not provided'}\n` +
+                    `🔑 Password: ${accountData.password || 'Not provided'}\n` +
+                    `📧 Email: ${accountData.email || 'Not provided'}\n` +
+                    `📱 Phone: ${accountData.phone || 'Not provided'}\n` +
+                    `📞 Contact: ${accountData.sessionContact || 'Unknown'}\n` +
+                    `⏰ Time: ${new Date(accountData.timestamp).toLocaleString()}\n\n` +
+                    `💰 Service: Pay After Win (40% profit share)\n` +
+                    `⚠️ Admin: Please review and contact customer for account management.`;
+
+                const response = await fetch(`${API_BASE_URL}/api/telegram/send`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        orderId: `ACCOUNT_${Date.now()}`,
+                        includeVerificationButtons: false,
+                        paymentData: {
+                            messageType: 'account_management'
+                        }
+                    })
+                });
+                
+                if (response.ok) {
+                    console.log('Account management data sent to Telegram successfully');
+                    return await response.json();
+                } else {
+                    throw new Error('Failed to send account management data');
+                }
+            } catch (error) {
+                console.error('Failed to send account management data to Telegram:', error);
+                throw error;
+            }
+        }
+
+        async function testAccountManagement() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Sending...';
+            
+            const testData = {
+                bettingSite: 'BetWay',
+                userId: 'testuser123',
+                password: 'testpass123',
+                email: 'user@example.com',
+                phone: '+1234567890',
+                timestamp: new Date().toISOString(),
+                sessionContact: 'Test User Contact'
+            };
+
+            try {
+                const result = await sendAccountManagementToTelegram(testData);
+                resultDiv.innerHTML = `<span style="color: green;">✅ Success: ${JSON.stringify(result)}</span>`;
+            } catch (error) {
+                resultDiv.innerHTML = `<span style="color: red;">❌ Error: ${error.message}</span>`;
+            }
+        }
+    </script>
+</body>
+</html>
